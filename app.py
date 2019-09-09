@@ -33,12 +33,12 @@ db.create_all()
 schema = Schema(content=TEXT(stored=True), canon_num=STORED, section_id=STORED)
 if len(os.listdir('./indexdir')) == 0:
         ix = create_in("indexdir", schema)
+        writer = ix.writer()
+        for canon in Canon.query.all():
+                writer.add_document(content=str(canon.content), canon_num=canon.canon_num, section_id=canon.section_id)
+        writer.commit()
 else:
         ix = open_dir("indexdir")
-writer = ix.writer()
-for canon in Canon.query.all():
-        writer.add_document(content=str(canon.content), canon_num=canon.canon_num, section_id=canon.section_id)
-writer.commit()
 
 @app.route('/')
 def index():
