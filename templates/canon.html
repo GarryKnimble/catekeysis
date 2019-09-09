@@ -2,6 +2,10 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1">
+        <meta property="og:type" content="website">
+        <meta property="og:title" content="Catekeysis">
+        <meta property="og:description" content="{{canon.canon_num}} {{canon.content}}">
+        <meta property="og:url" content="https://catekeysis.herokuapp.com/canon?canon={{canon.canon_num}}">
         <link href="https://fonts.googleapis.com/css?family=Shanti&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="{{ url_for('static', filename='./css/canon.css') }}">
         <link rel="stylesheet" href="{{ url_for('static', filename='./css/style.css') }}">
