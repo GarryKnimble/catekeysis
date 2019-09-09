@@ -3,3 +3,4 @@ gunicorn
 bcrypt
 flask_sqlalchemy
 psycopg2
+whoosh
