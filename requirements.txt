@@ -1,0 +1,5 @@
+flask
+gunicorn
+bcrypt
+flask_sqlalchemy
+psycopg2
