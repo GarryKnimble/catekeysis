@@ -1,7 +1,6 @@
 from flask import render_template
 from flask import request
 from flask import Flask
-import flask.ext.whooshalchemy
 app = Flask(__name__)
 app.config['WHOOSH_BASE'] = 'path/to/whoosh/base'
 
