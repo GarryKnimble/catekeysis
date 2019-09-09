@@ -1,0 +1,123 @@
+.search-header {
+    text-align: left;
+    padding: 10px;
+}
+
+.search-header img {
+    max-width: 200px;
+    width: 30%;
+    vertical-align: middle;
+}
+
+.search-header .search-form {
+    margin-block-end: 0px;
+}
+
+.search-header .search-form>input[type=text] {
+    width:calc(70% - 40px);
+    font-size: 1em;
+    border: solid 2px #EEEEEE;
+    border-radius: 23px;
+    padding: 5px;
+    padding-left: 20px;
+    padding-right: 20px;
+    margin-left: 30px;
+    transition: border 0.2s ease;
+    vertical-align: middle;
+}
+
+.search-header .search-form>input[type=text]:focus {
+    border: solid 2px #3F92D2;
+    outline: none;
+}
+
+.section-header {
+    padding: 10px;
+    text-align: center;
+    font-weight: 100;
+}
+
+.canon-list {
+    list-style-type: none;
+    text-align: left;
+    margin: 0px;
+    padding: 0px;
+}
+
+.canon-list li {
+    background-color: #EEEEEE;
+    padding: 20px;
+    overflow: auto;
+}
+
+.canon-list li>.wrapper {
+    overflow: auto;
+}
+
+.collapse-box {
+    display: inline-block;
+    float: left;
+    width: calc(100% - 30px);
+}
+
+.collapsed {
+    background-color:#FFFFFF !important;
+    transition: background 0.2s ease;
+    cursor: pointer;
+}
+
+.collapsed>.control-box {
+    display: none;
+}
+
+.collapsed:hover {
+    background-color:#EEEEEE !important;
+}
+
+.collapsed>.wrapper>.collapse-box {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.collapse-btn {
+    display: inline-block;
+    float: right;
+}
+
+.collapse-btn::after {
+    content: '\2BC6';
+    cursor: pointer;
+    pointer-events: all;
+}
+
+.collapsed>.wrapper>.collapse-btn::after {
+    content: '\2BC8';
+    cursor: pointer;
+    pointer-events: all;
+}
+
+.view-btn {
+    background-color: #0B61A4;
+    padding: 15px;
+    width:100%;
+    display: inline-block;
+    box-sizing: border-box;
+    text-align: center;
+    text-decoration: none;
+    color: #FFFFFF;
+    transition: background 0.2s ease;
+}
+
+.view-btn:hover {
+    background-color: #3b8ac7;
+}
+
+.control-box {
+    margin-top:20px;
+}
+
+.search-text {
+    color: #0B61A4;
+    font-weight: 800;
+}

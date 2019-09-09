@@ -1,0 +1,79 @@
+html, body {
+    padding: 0px;
+    margin: 0px;
+    border: none;
+}
+
+body {
+    font-family: 'Shanti', sans-serif;
+    font-size: 12pt;
+}
+
+body>.container {
+    min-height:100%;
+}
+
+.container {
+    max-width: 1000px;
+    width: 100%;
+    margin: 0 auto;
+    text-align: center;
+}
+
+h4 {
+    font-size: 1.5em;
+}
+
+footer {
+    background-color: #EEEEEE;
+}
+
+.footer-links {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    list-style-type: none;
+    padding: 0px;
+    margin: 0px;
+}
+
+.footer-links li {
+    padding: 20px;
+    max-width: 100px;
+    flex: 1;
+    transition: background 0.2s ease;
+}
+
+.footer-links li:hover {
+    background-color: #CCCCCC;
+}
+
+@media only screen and (max-width: 414px) {
+    body {
+        font-size: 10pt;
+    }
+}
+
+@media only screen and (min-width: 415px) {
+    body {
+        font-size: 24pt;
+    }
+}
+
+@media only screen and (min-width: 768px) {
+    body {
+        font-size: 16pt;
+    }
+}
+
+@media only screen and (min-width: 1024px) {
+    body {
+        font-size: 18pt;
+    }
+}
+
+@media only screen and (min-width: 1025px) {
+    body {
+        font-size: 12pt;
+    }
+}

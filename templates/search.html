@@ -1,0 +1,79 @@
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="https://fonts.googleapis.com/css?family=Shanti&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="{{ url_for('static', filename='./css/search.css') }}">
+        <link rel="stylesheet" href="{{ url_for('static', filename='./css/style.css') }}">
+    </head>
+    <body>
+        <div class="container">
+            <div class="search-header">
+            <form class="search-form">
+                <a href="/"><img src="{{ url_for('static', filename='./img/catekeysis.svg') }}"/></a><input type="text" name="query" value="{{ search_text }}"/>
+            </form>
+            </div>
+            <div class="search-results">
+                <section>
+                    <div class="section-header">
+                        <h3>The life of man: To know and love God</h3>
+                    </div>
+                    <ul class="canon-list">
+                        <li><div class="wrapper"><div class="collapse-box">1 God, infinitely perfect and blessed in himself, in <span class="search-text">a plan of sheer goodness freely created man to make him share in his own blessed life.</span> For this reason, at every time and in every place, God draws close to man. He calls man to seek him, to know him, to love him with all his strength. He calls together all men, scattered and divided by sin, into the unity of his family, the Church. To accomplish this, when the fullness of time had come, God sent his Son as Redeemer and Saviour. In his Son and through him, he invites men to become, in the Holy Spirit, his adopted children and thus heirs of his blessed life.</div>
+                            <div class="collapse-btn"></div>
+                        </div>                        
+                            <div class="control-box">
+                                <a class="view-btn" href="{{ './canon?canon=1&query=' + search_text }}">View Details</a>
+                            </div>
+                        </li>
+                        <li class="collapsed"><div class="wrapper"><div class="collapse-box">2 So that this call should resound throughout the world, Christ sent forth the apostles he had chosen, commissioning them to proclaim the gospel: "Go therefore and make disciples of all nations, baptizing them in the name of the Father and of the Son and of the Holy Spirit, teaching them to observe all that I have commanded you; and lo, I am with you always, to the close of the age."4 Strengthened by this mission, the apostles "went forth and preached everywhere, while the Lord worked with them and confirmed the message by the signs that attended it.</div>
+                        <div class="collapse-btn"></div>
+                        </div>
+                            <div class="control-box">
+                                <a class="view-btn" href="{{ './canon?canon=1&query=' + search_text }}">View Details</a>
+                            </div>
+                        </li>
+                    </ul>
+                </section>
+                <section>
+                        <div class="section-header">
+                            <h3>Handing on the Faith: Catechesis</h3>
+                        </div>
+                        <ul class="canon-list">
+                            <li class="collapsed"><div class="wrapper"><div class="collapse-box">4 Quite early on, the name catechesis was given to the totality of the Church's efforts to make disciples, to help men believe that Jesus is the Son of God so that believing they might have life in his name, and to educate and instruct them in this life, thus building up the body of Christ.</div>
+                            <div class="collapse-btn"></div>
+                            </div>
+                                <div class="control-box">
+                                    <a class="view-btn" href="{{ './canon?canon=1&query=' + search_text }}">View Details</a>
+                                </div>
+                            </li>
+                            <li class="collapsed"><div class="wrapper"><div class="collapse-box">5 "Catechesis is an education in the faith of children, young people and adults which includes especially the teaching of Christian doctrine imparted, generally speaking, in an organic and systematic way, with a view to initiating the hearers into the fullness of Christian life."</div>
+                            <div class="collapse-btn"></div>
+                            </div>
+                                <div class="control-box">
+                                    <a class="view-btn" href="{{ './canon?canon=1&query=' + search_text }}">View Details</a>
+                                </div>
+                            </li>
+                            <li class="collapsed"><div class="wrapper"><div class="collapse-box">6 While not being formally identified with them, catechesis is built on a certain number of elements of the Church's pastoral mission which have a catechetical aspect, that prepare for catechesis, or spring from it. They are: the initial proclamation of the Gospel or missionary preaching to arouse faith; examination of the reasons for belief; experience of Christian living; celebration of the sacraments; integration into the ecclesial community; and apostolic and missionary witness.</div>
+                            <div class="collapse-btn"></div>
+                            </div>
+                                <div class="control-box">
+                                    <a class="view-btn" href="{{ './canon?canon=1&query=' + search_text }}">View Details</a>
+                                </div>
+                            </li>
+                        </ul>
+                    </section>
+            </div>
+        </div>
+        <footer>
+            <div class="container">
+                <ul class="footer-links">
+                    <li>Help</li>
+                    <li>Feedback</li>
+                </ul>
+            </div>
+        </footer>
+        <script src="{{ url_for('static', filename='./js/jquery-3.4.1.min.js') }}"></script>
+        <script src="{{ url_for('static', filename='./js/catekeysis.dropdown.js') }}"></script>
+        <script src="{{ url_for('static', filename='./js/catekeysis.search.js') }}"></script>
+    </body>
+</html>
