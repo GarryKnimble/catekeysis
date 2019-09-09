@@ -86,12 +86,14 @@
 }
 
 .collapse-btn::after {
+    font-family: Arial, Helvetica, sans-serif;
     content: '\2BC6';
     cursor: pointer;
     pointer-events: all;
 }
 
 .collapsed>.wrapper>.collapse-btn::after {
+    font-family: Arial, Helvetica, sans-serif;
     content: '\2BC8';
     cursor: pointer;
     pointer-events: all;
