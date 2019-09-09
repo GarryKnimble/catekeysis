@@ -1,7 +1,19 @@
 from flask import render_template
 from flask import request
 from flask import Flask
+import flask.ext.whooshalchemy
 app = Flask(__name__)
+app.config['WHOOSH_BASE'] = 'path/to/whoosh/base'
+
+class Canon(db.Model):
+        __tablename__ = 'canon'
+        __searchable__ = ['content']
+
+        canon_num = app.db.Column(app.db.Integer, primary_key=True)
+        content = app.db.Column(app.db.Text)
+
+        def __repr__(self):
+                return '{0}(title={1})'.format(self.__class__.__name__, self.content)
 
 @app.route('/')
 def index():
