@@ -123,3 +123,14 @@
     color: #0B61A4;
     font-weight: 800;
 }
+
+.no-result {
+    padding: 20px;
+    padding-top: 80px;
+    padding-bottom: 40px;
+    font-size: 1.3em;
+}
+
+.no-result p>img {
+    width:50%;
+}
