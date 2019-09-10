@@ -83,7 +83,7 @@ def search():
                                         section["results"].append(result)
                         if len(section["results"]) > 0:
                                 query_result.append(section)
-                return render_template('search.html', search_text=request.args["query"], highlight=query_result[0]["results"][0].highlights("content"), sections=query_result)
+                return render_template('search.html', search_text=request.args["query"], highlight_canon_num=query_result[0]["results"][0].canon_num, highlight=query_result[0]["results"][0].highlights("content"), sections=query_result)
 
 # Canon page
 @app.route('/canon', methods=['GET'])
