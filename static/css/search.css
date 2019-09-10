@@ -102,6 +102,7 @@
 .view-btn {
     background-color: #0B61A4;
     padding: 15px;
+    max-width:150px;
     width:100%;
     display: inline-block;
     box-sizing: border-box;
@@ -117,6 +118,7 @@
 
 .control-box {
     margin-top:20px;
+    text-align:center;
 }
 
 .search-text {
