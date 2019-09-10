@@ -22,7 +22,7 @@
         <div class="container">
             <div class="search-header">
             <form class="search-form" action="./search" method="GET">
-                <a href="/"><img src="{{ url_for('static', filename='./img/catekeysis.svg') }}"/></a><input type="text" name="query" value="{{ search_text }}"/>
+                <a href="/"><img src="{{ url_for('static', filename='./img/catekeysis2.svg') }}"/></a><input type="text" name="query" value="{{ search_text }}"/>
             </form>
             </div>
             <div class="contents">
@@ -44,6 +44,16 @@
                     <li>Feedback</li>
                     <li>About</li>
                 </ul>
+            </div>
+            <div class="container">
+                <div class="footer-info">
+                        Excerpts from the English translation of the Catechism of the Catholic Church for use in the
+                        United States of America Copyright © 1994, United States Catholic Conference, Inc. -- Libreria
+                        Editrice Vaticana. Used with Permission. English translation of the Catechism of the Catholic
+                        Church: Modifications from the Editio Typica copyright © 1997, United States Conference of
+                        Catholic Bishops—Libreria Editrice Vaticana.
+                        <p>Copyright &#169; Catekeysis. All rights reserved.</p>
+                </div>
             </div>
         </footer>
         <script src="{{ url_for('static', filename='./js/jquery-3.4.1.min.js') }}"></script>

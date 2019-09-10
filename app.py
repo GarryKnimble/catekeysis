@@ -1,4 +1,6 @@
 from flask import render_template
+from flask import redirect
+from flask import url_for
 from flask import request
 from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
@@ -58,10 +60,18 @@ if len(os.listdir('./indexdir')) == 0:
 else:
         ix = open_dir("indexdir")
 
+def check_mode(template):
+        maintenance_mode = int(os.environ['MAINTENANCE_MODE'])
+        if maintenance_mode == 1:
+                return redirect(url_for('maintenance'))
+        else:
+                return template
+
+
 # Home page
 @app.route('/')
 def index():
-    return render_template('index.html')
+    return check_mode(render_template('index.html'))
 
 # Search page
 @app.route('/search', methods=['GET'])
@@ -83,14 +93,19 @@ def search():
                                         section["results"].append(result)
                         if len(section["results"]) > 0:
                                 query_result.append(section)
-                return render_template('search.html', search_text=request.args["query"], highlight_canon_num=(query_result[0]["results"][0]["canon_num"] if len(query_result) > 0 else ""), highlight=(query_result[0]["results"][0].highlights("content") if len(query_result) else "No Result"), has_results=(len(query_result) > 0), sections=query_result)
+                return check_mode(render_template('search.html', search_text=request.args["query"], highlight_canon_num=(query_result[0]["results"][0]["canon_num"] if len(query_result) > 0 else ""), highlight=(query_result[0]["results"][0].highlights("content") if len(query_result) else "No Result"), has_results=(len(query_result) > 0), sections=query_result))
 
 # Canon page
 @app.route('/canon', methods=['GET'])
 def canon():
     if request.method == "GET":
         canon = Canon.query.filter_by(canon_num=int(request.args["canon"])).first()
-        return render_template('canon.html', search_text=request.args["query"], canon=canon)
+        return check_mode(render_template('canon.html', search_text=request.args["query"], canon=canon))
+
+# Maintenance page
+@app.route('/maintenance', methods=['GET'])
+def maintenance():
+        return render_template('maintenance.html')
 
 if __name__ == '__main__':
     app.run()
