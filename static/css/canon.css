@@ -73,3 +73,24 @@ a.back-btn:hover {
     padding: 40px;
     padding-top: 0px;
 }
+
+a.footnote-item {
+    display: inline-block;
+    vertical-align: middle;
+    border-radius: 10%;
+    margin-left: 5px;
+    color: #0B61A4;
+    font-weight: 800;
+    text-decoration: none;
+}
+
+.footnotes {
+    padding: 100px;
+    color: #0B61A4;
+    font-weight: 800;
+}
+
+.footnotes span {
+    display: inline-block;
+    padding: 5px;
+}

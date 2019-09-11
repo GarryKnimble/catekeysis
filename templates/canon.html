@@ -30,7 +30,12 @@
                     <h1>{{canon.canon_num}}</h1>
                 </div>
                 <div class="canon-text">
-                    {{canon.content}}
+                    {{canon.content | safe}}
+                </div>
+                <div class="footnotes">
+                    {% for f in footnotes %}
+                    <span><sup>{{f.id}}</sup> {{f.footnote}}</span>{% if loop.index != footnotes_length %},{% endif %} 
+                    {% endfor %}
                 </div>
                 <div class="control-block">
                     <a class="back-btn" href="{{ './search?query=' + search_text }}">‹</a>
@@ -52,7 +57,6 @@
                         Editrice Vaticana. Used with Permission. English translation of the Catechism of the Catholic
                         Church: Modifications from the Editio Typica copyright © 1997, United States Conference of
                         Catholic Bishops—Libreria Editrice Vaticana.
-                        <p>Copyright &#169; Catekeysis. All rights reserved.</p>
                 </div>
             </div>
         </footer>

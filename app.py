@@ -1,4 +1,5 @@
 from flask import render_template
+from flask import Markup
 from flask import redirect
 from flask import url_for
 from flask import request
@@ -45,6 +46,15 @@ class SectionTitle(db.Model):
         def __repr__(self):
                 return '{0}'.format(self.title)
 
+class FootNote(db.Model):
+        footnote = db.Column(db.Text, primary_key=True)
+        canon_num = db.Column(db.Integer)
+        sentence_location = db.Column(db.Integer)
+        id = db.Column(db.Integer)
+
+        def __repr__(self):
+                return '{0}'.format(self.footnote)
+
 db.create_all()
 
 # Set up the indexing tools
@@ -66,6 +76,9 @@ def check_mode(template):
                 return redirect(url_for('maintenance'))
         else:
                 return template
+
+def insert_string(substring, text, index):
+        return text[:index] + substring + text[index:]
 
 
 # Home page
@@ -99,8 +112,11 @@ def search():
 @app.route('/canon', methods=['GET'])
 def canon():
     if request.method == "GET":
+        footnotes = FootNote.query.filter_by(canon_num=int(request.args["canon"]))
         canon = Canon.query.filter_by(canon_num=int(request.args["canon"])).first()
-        return check_mode(render_template('canon.html', search_text=request.args["query"], canon=canon))
+        for index, footnote in enumerate(footnotes):
+                canon.content = insert_string("<sup><a class='footnote-item' href='#'>" + str(footnote.id) + "</a></sup>", canon.content, footnote.sentence_location)
+        return check_mode(render_template('canon.html', search_text=request.args["query"], canon=canon, footnotes=footnotes, footnotes_length=footnotes.count()))
 
 # Maintenance page
 @app.route('/maintenance', methods=['GET'])
