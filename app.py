@@ -70,6 +70,7 @@ if len(os.listdir('./indexdir')) == 0:
 else:
         ix = open_dir("indexdir")
 
+# Checks the current mode and redirects based on that mode.
 def check_mode(template):
         maintenance_mode = int(os.environ['MAINTENANCE_MODE'])
         if maintenance_mode == 1:
@@ -77,8 +78,15 @@ def check_mode(template):
         else:
                 return template
 
-def insert_string(substring, text, index):
-        return text[:index] + substring + text[index:]
+# Inserts the footnotes into the content properly
+def insert_footnotes(footnote_list, starttag, endtag, text):
+        new_string = text
+        index_offset = 0
+        for footnote in footnote_list:
+                content = starttag + str(footnote.id) + endtag
+                new_string += text[:footnote.sentence_location + index_offset] + content + text[footnote.sentence_location + index_offset:]
+                index_offset += len(content)
+        return new_string
 
 
 # Home page
@@ -114,8 +122,7 @@ def canon():
     if request.method == "GET":
         footnotes = FootNote.query.filter_by(canon_num=int(request.args["canon"]))
         canon = Canon.query.filter_by(canon_num=int(request.args["canon"])).first()
-        for index, footnote in enumerate(footnotes):
-                canon.content = insert_string("<sup><a class='footnote-item' href='#'>" + str(footnote.id) + "</a></sup>", canon.content, footnote.sentence_location)
+        canon.content = insert_footnotes(footnotes, "<sup><a class='footnote-item' href='#'>", "</a></sup>", canon.content)
         return check_mode(render_template('canon.html', search_text=request.args["query"], canon=canon, footnotes=footnotes, footnotes_length=footnotes.count()))
 
 # Maintenance page

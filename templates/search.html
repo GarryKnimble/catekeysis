@@ -21,7 +21,7 @@
         <div class="container">
             <div class="search-header">
             <form class="search-form">
-                <a href="/"><img src="{{ url_for('static', filename='./img/catekeysis3.svg') }}"/></a><input type="text" name="query" value="{{ search_text }}"/>
+                <a href="/"><img class="logo" src="{{ url_for('static', filename='./img/catekeysis3.svg') }}"/></a><input type="text" name="query" value="{{ search_text }}"/><img onclick="this.parentElement.submit()" class="search-btn" src="{{ url_for('static', filename='./img/search.svg') }}"/>
             </form>
             </div>
             <div class="search-results">
@@ -68,7 +68,7 @@
                         Editrice Vaticana. Used with Permission. English translation of the Catechism of the Catholic
                         Church: Modifications from the Editio Typica copyright © 1997, United States Conference of
                         Catholic Bishops—Libreria Editrice Vaticana.
-                        <p>Only Canons 1-10 of the Catechism of the Catholic Church are available on Catekeysis at the moment. The intention is to add the rest of the canons eventually.</p>
+                        <p>Only Canons 1-25 of the Catechism of the Catholic Church are available on Catekeysis at the moment. The intention is to add the rest of the canons eventually.</p>
                 </div>
             </div>
         </footer>

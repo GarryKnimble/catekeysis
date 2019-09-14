@@ -22,7 +22,7 @@
             <div class="search-box">
             <img src="{{ url_for('static', filename='./img/catekeysis3.svg') }}"/>
             <form class="search-form" action="./search" method="GET">
-                <input type="text" name="query"/>
+                <input type="text" name="query"/><img class="search-btn" onclick="this.parentElement.submit()" src="{{ url_for('static', filename='./img/search.svg') }}"/>
                 <h4>Frequently Asked Questions</h4>
                 <ul class="faq-box">
                     <li><a>Do we have to go to Mass on Sunday?</a></li>

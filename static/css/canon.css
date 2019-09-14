@@ -3,7 +3,7 @@
     padding: 10px;
 }
 
-.search-header img {
+.search-header .logo {
     max-width: 200px;
     width: 30%;
     vertical-align: middle;
@@ -14,10 +14,13 @@
 }
 
 .search-header .search-form>input[type=text] {
-    width:calc(70% - 40px);
+    width:calc(70% - 70px);
     font-size: 1em;
     border: solid 2px #EEEEEE;
     border-radius: 23px;
+    border-top-right-radius: 0px;
+    border-bottom-right-radius: 0px;
+    border-right: none;
     padding: 5px;
     padding-left: 20px;
     padding-right: 20px;
@@ -93,4 +96,29 @@ a.footnote-item {
 .footnotes span {
     display: inline-block;
     padding: 5px;
+}
+
+.search-btn {
+    height: 1em;
+    width: 1em;
+    padding: 6px;
+    vertical-align: middle;
+    border: solid 2px #EEEEEE;
+    border-left: none;
+    border-top-right-radius: 23px;
+    border-bottom-right-radius: 23px;
+    cursor: pointer;
+    transition: border 0.2s ease;
+}
+
+@media only screen and (max-width: 768px) {
+    .search-header .search-form>input[type=text] {
+        width: calc(70% - 70px);
+    }
+}
+
+@media only screen and (min-width: 769px) {
+    .search-header .search-form>input[type=text] {
+        width: calc(100% - 270px);
+    }
 }
