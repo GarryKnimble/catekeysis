@@ -35,6 +35,11 @@
     outline: none;
 }
 
+.search-header .search-form>input[type=text]:focus + img {
+    border: solid 2px #3F92D2;
+    border-left: none;
+}
+
 .section-header {
     padding: 10px;
     text-align: center;
@@ -61,6 +66,7 @@
 .collapse-box {
     display: inline-block;
     float: left;
+    line-height: 1.5;
     width: calc(100% - 30px);
 }
 

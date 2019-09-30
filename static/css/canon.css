@@ -31,7 +31,13 @@
 
 .search-header .search-form>input[type=text]:focus {
     border: solid 2px #3F92D2;
+    border-right: none;
     outline: none;
+}
+
+.search-header .search-form>input[type=text]:focus + img {
+    border: solid 2px #3F92D2;
+    border-left: none;
 }
 
 .section-header {
@@ -45,6 +51,7 @@
     padding-top:10px;
     font-size: 1.4em;
     text-align: left;
+    line-height: 2;
 }
 
 .search-text {
