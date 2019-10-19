@@ -102,7 +102,7 @@ def search():
         # With the Whoosh search object...
         with ix.searcher() as searcher:
                 # Create query parser to search for canons from GET request arguments
-                query = QueryParser("content", ix.schema).parse(request.args["query"])
+                query = QueryParser("content", ix.schema).parse(request.args["query"] if len(request.args["query"]) > 0 else "*")
                 results = searcher.search(query, limit=20, terms=True)
                 results.formatter = highlight.UppercaseFormatter()
                 query_result = []

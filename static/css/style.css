@@ -26,7 +26,8 @@ h4 {
 }
 
 footer {
-    background-color: #EEEEEE;
+    background-color: #0B61A4;
+    color: #FFF
 }
 
 .footer-links {
@@ -40,13 +41,14 @@ footer {
 
 .footer-links li {
     padding: 20px;
-    max-width: 100px;
+    max-width: 120px;
     flex: 1;
     transition: background 0.2s ease;
 }
 
 .footer-links li:hover {
-    background-color: #CCCCCC;
+    background-color: #FFF;
+    color:#0B61A4;
 }
 
 .footer-info {
@@ -54,15 +56,50 @@ footer {
     font-size: 0.7em;
 }
 
+.footer-info .footer-logo {
+    width: 20%;
+}
+
 @media only screen and (max-width: 414px) {
     body {
         font-size: 10pt;
+    }
+    .footer-links {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        list-style-type: none;
+        padding: 0px;
+        margin: 0px;
+    }
+    
+    .footer-links li {
+        padding: 20px;
+        max-width: none;
+        flex: 1;
+        transition: background 0.2s ease;
     }
 }
 
 @media only screen and (min-width: 415px) {
     body {
         font-size: 24pt;
+    }
+
+    .footer-links {
+        display: flex;
+        justify-content: center;
+        flex-direction: row;
+        list-style-type: none;
+        padding: 0px;
+        margin: 0px;
+    }
+    
+    .footer-links li {
+        padding: 20px;
+        max-width: 120px;
+        flex: 1;
+        transition: background 0.2s ease;
     }
 }
 
