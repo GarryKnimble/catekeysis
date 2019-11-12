@@ -31,6 +31,33 @@
                 </div>
                 <div class="paragraph-text">
     {{paragraph.content | safe}}
+                    <div class="church-fathers">
+                        <h2>Church Fathers</h2>
+                        <div class="church-father">
+                            <img class="photo" src="{{ url_for('static', filename='./img/Santo_Tomás_de_Aquino_-_Antonio_del_Castillo_Saavedra.jpg') }}">
+                            <div class="info">
+                                <h3>St. Thomas Aquinas</h3>
+                                <span class="quote">"This is a test quote. This is for the quote which is used as a back up for this particular Church Father."</span>
+                                <span class="quote">"This is a test quote. This is for the quote which is used as a back up for this particular Church Father."</span>
+                            </div>
+                        </div>
+                        <div class="church-father">
+                            <img class="photo" src="{{ url_for('static', filename='./img/Ikone_Athanasius_von_Alexandria.jpg') }}">
+                            <div class="info">
+                                <h3>St. Athanasius of Alexandria</h3>
+                                <span class="quote">"This is a test quote. This is for the quote which is used as a back up for this particular Church Father."</span>
+                                <span class="quote">"This is a test quote. This is for the quote which is used as a back up for this particular Church Father."</span>
+                            </div>
+                        </div>
+                        <div class="church-father">
+                            <img class="photo" src="{{ url_for('static', filename='./img/Gregor-Chora.jpg') }}">
+                            <div class="info">
+                                <h3>St. Gregory of Nazianzus</h3>
+                                <span class="quote">"This is a test quote. This is for the quote which is used as a back up for this particular Church Father."</span>
+                                <span class="quote">"This is a test quote. This is for the quote which is used as a back up for this particular Church Father."</span>
+                            </div>
+                        </div>
+                    </div>
                 </div>
                 {% if footnotes_length > 0 %}
                 <div class="footnotes">
