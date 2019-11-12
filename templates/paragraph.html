@@ -10,13 +10,13 @@
         <meta name="msapplication-TileColor" content="#da532c">
         <meta name="theme-color" content="#ffffff">
         <meta property="og:type" content="website">
-        <meta property="og:title" content="Catekeysis: Canon {{canon.canon_num}}">
-        <meta property="og:description" content="{{canon.canon_num}} {{canon.content}}">
-        <meta property="og:url" content="https://catekeysis.herokuapp.com/canon?canon={{canon.canon_num}}">
+        <meta property="og:title" content="Catekeysis: Paragraph {{paragraph.paragraph_num}}">
+        <meta property="og:description" content="{{paragraph.paragraph_num}} {{paragraph.content}}">
+        <meta property="og:url" content="https://catekeysis.herokuapp.com/paragraph?paragraph={{paragraph.paragraph_num}}">
         <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
-        <link rel="stylesheet" href="{{ url_for('static', filename='./css/canon.css') }}">
+        <link rel="stylesheet" href="{{ url_for('static', filename='./css/paragraph.css') }}">
         <link rel="stylesheet" href="{{ url_for('static', filename='./css/style.css') }}">
-        <title>Canon {{canon.canon_num}} - Catekeysis</title>
+        <title>Paragraph {{paragraph.paragraph_num}} - Catekeysis</title>
     </head>
     <body>
         <div class="container">
@@ -27,16 +27,18 @@
             </div>
             <div class="contents">
                 <div class="section-header">
-                    <h1>{{canon.canon_num}}</h1>
+                    <h1>{{paragraph.paragraph_num}}</h1>
                 </div>
-                <div class="canon-text">
-                    {{canon.content | safe}}
+                <div class="paragraph-text">
+    {{paragraph.content | safe}}
                 </div>
+                {% if footnotes_length > 0 %}
                 <div class="footnotes">
                     {% for f in footnotes %}
                     <span><sup>{{f.id}}</sup> {{f.footnote}}</span>{% if loop.index != footnotes_length %},{% endif %} 
                     {% endfor %}
                 </div>
+                {% endif %}
                 <div class="control-block">
                     <a class="back-btn" href="{{ './search?query=' + search_text }}">‹</a>
                 </div>
@@ -46,7 +48,6 @@
             <div class="container">
                 <ul class="footer-links">
                         <li>Help</li>
-                        <li>Scripture</li>
                         <li>Volunteer</li>
                         <li>Contact</li>
                         <li>About</li>
@@ -62,14 +63,16 @@
                         Editrice Vaticana. Used with Permission. English translation of the Catechism of the Catholic
                         Church: Modifications from the Editio Typica copyright © 1997, United States Conference of
                         Catholic Bishops—Libreria Editrice Vaticana.
-                        <p>Only Canons 1-49 of the Catechism of the Catholic Church are available on Catekeysis at the moment. The intention is to add the rest of the canons eventually.</p>
+                        <p>Only Paragraphs 1-49 of the Catechism of the Catholic Church are available on Catekeysis at the moment. The intention is to add the rest of the paragraphs eventually.</p>
                 </div>
                 <div class="footer-info">
                     <b>&#169;2019 Catekeysis. All Rights Reserved.</b>
                 </div>
             </div>
         </footer>
+        <script src="{{ url_for('static', filename='./js/scrollreveal.min.js') }}"></script>
         <script src="{{ url_for('static', filename='./js/jquery-3.4.1.min.js') }}"></script>
         <script src="{{ url_for('static', filename='./js/catekeysis.search.js') }}"></script>
+        <script src="{{ url_for('static', filename='./js/catekeysis.scrollreveal.js') }}"></script>
     </body>
 </html>

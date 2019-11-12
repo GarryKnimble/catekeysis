@@ -46,12 +46,54 @@
     font-weight: 100;
 }
 
-.canon-text { 
+.paragraph-text { 
     padding:50px;
     padding-top:10px;
-    font-size: 1.4em;
+    font-size: 1.2em;
     text-align: left;
     line-height: 2;
+    white-space: pre-wrap;
+}
+
+.paragraph-text h2 {
+    font-size: 1.5em;
+}
+
+.paragraph-text h3 {
+    font-size: 1.2em;
+    margin-top: 0px;
+}
+
+img.photo {
+    width: 200px;
+    height: 200px;
+    background-color: #cccccc;
+    vertical-align: top;
+    object-fit: cover;
+    object-position: 50% 0;
+    box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.5)
+}
+
+.info {
+    display: inline-block;
+    vertical-align: top;
+    width: calc(100% - 240px);
+    padding-left: 60px;
+}
+
+.church-fathers {
+    line-height: 2;
+    font-size: 0.8em;
+    white-space: nowrap;
+}
+
+.church-fathers .church-father {padding-top: 40px;padding-bottom: 40px;}
+
+.church-fathers .quote {
+    display: block;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    white-space: normal;
 }
 
 .search-text {
@@ -128,5 +170,18 @@ a.footnote-item {
 @media only screen and (min-width: 769px) {
     .search-header .search-form>input[type=text] {
         width: calc(100% - 270px);
+    }
+}
+
+@media only screen and (max-width: 1024px) {
+    .church-fathers {
+        white-space: normal;
+        text-align: center;
+    }
+    .church-father .info {
+        display: block;
+        padding: 50px;
+        margin: 0 auto;
+        width: auto;
     }
 }

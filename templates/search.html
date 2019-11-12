@@ -10,7 +10,7 @@
         <meta name="theme-color" content="#ffffff">
         <meta property="og:type" content="website">
         <meta property="og:title" content="Search '{{search_text}}' in the CCC - Catekeysis">
-        <meta property="og:description" content="{{highlight_canon_num}}...{{highlight}}...">
+        <meta property="og:description" content="{{highlight_paragraph_num}}...{{highlight}}...">
         <meta property="og:url" content="https://catekeysis.herokuapp.com/search?query={{search_text}}">
         <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="{{ url_for('static', filename='./css/search.css') }}">
@@ -27,7 +27,7 @@
             <div class="search-results">
                 {% if not has_results %}
                 <div class="no-result">
-                    Search terms <strong class="search-text">'{{search_text}}'</strong> returned no canons.
+                    Search terms <strong class="search-text">'{{search_text}}'</strong> returned no paragraphs.
                 </div>
                 {% endif %}
                 {% if has_results %}
@@ -37,14 +37,14 @@
                         <h3>{{ query_result.title }}</h3>
                     </div>
                 </section>
-                <ul class="canon-list">
+                <ul class="paragraph-list">
                     {% set section_id = loop.index0 %}
                     {% for result in query_result.results %}
-                    <li class="{% if loop.index0 + section_id != 0 %}collapsed{% endif %}"><div class="wrapper"><div class="collapse-box"><b>{{ result.canon_num }}</b> {{result.content}}</div>
+                    <li class="{% if loop.index0 + section_id != 0 %}collapsed{% endif %}"><div class="wrapper"><div class="collapse-box"><b>{{ result.paragraph_num }}</b> {{result.content}}</div>
                     <div class="collapse-btn"></div>
                     </div>
                         <div class="control-box">
-                            <a class="view-btn" href="./canon?canon={{ result.canon_num }}&query={{search_text}}">View Details</a>
+                            <a class="view-btn" href="./paragraph?id={{ result.paragraph_num }}&query={{search_text}}">View Details</a>
                         </div>
                     </li>
                     {% endfor %}
@@ -57,7 +57,6 @@
             <div class="container">
                 <ul class="footer-links">
                     <li>Help</li>
-                    <li>Scripture</li>
                     <li>Volunteer</li>
                     <li>Contact</li>
                     <li>About</li>
@@ -73,7 +72,7 @@
                         Editrice Vaticana. Used with Permission. English translation of the Catechism of the Catholic
                         Church: Modifications from the Editio Typica copyright © 1997, United States Conference of
                         Catholic Bishops—Libreria Editrice Vaticana.
-                        <p>Only Canons 1-49 of the Catechism of the Catholic Church are available on Catekeysis at the moment. The intention is to add the rest of the canons eventually.</p>
+                        <p>Only Paragraphs 1-49 of the Catechism of the Catholic Church are available on Catekeysis at the moment. The intention is to add the rest of the paragraphs eventually.</p>
                 </div>
                 <div class="footer-info">
                     <b>&#169;2019 Catekeysis. All Rights Reserved.</b>
